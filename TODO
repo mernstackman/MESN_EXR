@@ -1,0 +1,37 @@
+TASKS:
+  ☐ Finish this tutorial: E:\Geometry\Downloads\Video\Sequelize Migrations and Associations - YouTube.mp4
+  ☐ Dockerize with this: E:\dockercon19-master\5.Dockerfile
+  ☐ Docker Compose the app
+
+STEPS:
+☐ Create a blank folder and open it up in VS Code
+☐ Open the folder in terminal
+☐ create github repository
+☐ npm init and write the github repository url in package.json.
+☐ git init
+☐ git remote add origin https://github.com/mernstackman/MESN_EXR.git
+☐ Create .gitignore file (echo > .gitignore) and put node_modules and .env inside
+☐ npm i express sequelize mysql2 body-parser express-handlebars
+☐ npm i -g sequelize-cli
+☐ sequelize init
+☐ Create "./src/database" folder and move generated sequelize boilerplate inside (mkdir src && mkdir src/database)
+☐ Create index.js file inside "src" folder. This will be the main file for the node js server (echo > src/index.js)
+☐ Install dotenv (npm i dotenv)
+☐ Create .env file
+☐ Edit "src/database/config/config.json"
+    - Rename to "config.js" file.
+    - Include dotenv at the top of it (require("dotenv").config();)
+    - Modify the contents
+    - Modify "models/index.js" to include "config.js" file instead of "config.json"
+☐ Create models (sequelize model:create --name TableName --attributes key_0:value_0,key_1:value_1,other_keys:other_values)
+☐ Run migration (sequelize db:migrate)
+☐ Create node js server:
+  - add support to latest es6 syntax:
+    - > install babel: npm i -D @babel/core @babel/cli @babel/node @babel/preset-env
+    - > create .babelrc file. content: {"presets": ["@babel/preset-env"] }
+  - setup nodemon to enable hot reloading:
+    - > install nodemon: npm i -D nodemon
+    - > create nodemon.json file on root folder: echo > nodemon.json
+      - >> content: { "verbose": false, "watch": ["./server"], "ext": "js" } 
+  - add command script to package.json file: "dev": "nodemon --exec babel-node ./server/index.js",
+  - Create app.js inside "src" folder for express configuration: echo > src/app.js
